@@ -13,6 +13,8 @@
 		8C6B816120E0B7F900A435D4 /* Cavy_Catcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C6B815F20E0B7F900A435D4 /* Cavy_Catcher.xcdatamodeld */; };
 		8C6B816320E0B7F900A435D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C6B816220E0B7F900A435D4 /* Assets.xcassets */; };
 		8C6B816620E0B7F900A435D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C6B816420E0B7F900A435D4 /* LaunchScreen.storyboard */; };
+		8C6B816E20E0BB1200A435D4 /* jsdevs.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8C6B816D20E0BB1200A435D4 /* jsdevs.jpeg */; };
+		8C6B817020E0BBF700A435D4 /* CavyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6B816F20E0BBF700A435D4 /* CavyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8C6B816220E0B7F900A435D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C6B816520E0B7F900A435D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C6B816720E0B7F900A435D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C6B816D20E0BB1200A435D4 /* jsdevs.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jsdevs.jpeg; sourceTree = "<group>"; };
+		8C6B816F20E0BBF700A435D4 /* CavyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CavyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				8C6B815820E0B7F900A435D4 /* AppDelegate.swift */,
 				8C6B815A20E0B7F900A435D4 /* ViewController.swift */,
 				8C6B815C20E0B7F900A435D4 /* Main.storyboard */,
+				8C6B816F20E0BBF700A435D4 /* CavyViewController.swift */,
+				8C6B816D20E0BB1200A435D4 /* jsdevs.jpeg */,
 				8C6B816220E0B7F900A435D4 /* Assets.xcassets */,
 				8C6B816420E0B7F900A435D4 /* LaunchScreen.storyboard */,
 				8C6B816720E0B7F900A435D4 /* Info.plist */,
@@ -129,6 +135,7 @@
 				8C6B816620E0B7F900A435D4 /* LaunchScreen.storyboard in Resources */,
 				8C6B816320E0B7F900A435D4 /* Assets.xcassets in Resources */,
 				8C6B815E20E0B7F900A435D4 /* Main.storyboard in Resources */,
+				8C6B816E20E0BB1200A435D4 /* jsdevs.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C6B815B20E0B7F900A435D4 /* ViewController.swift in Sources */,
+				8C6B817020E0BBF700A435D4 /* CavyViewController.swift in Sources */,
 				8C6B815920E0B7F900A435D4 /* AppDelegate.swift in Sources */,
 				8C6B816120E0B7F900A435D4 /* Cavy_Catcher.xcdatamodeld in Sources */,
 			);

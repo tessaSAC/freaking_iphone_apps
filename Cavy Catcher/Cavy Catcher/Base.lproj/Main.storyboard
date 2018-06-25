@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lAJ-dP-e9J">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,133 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Cavy_Catcher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aWr-Db-5Fu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aWr-Db-5Fu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FLR-On-Wk4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aWr-Db-5Fu" secondAttribute="trailing" id="MJO-UQ-cbm"/>
+                            <constraint firstItem="aWr-Db-5Fu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MKZ-Hg-j19"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aWr-Db-5Fu" secondAttribute="bottom" id="OqT-3A-wa9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AQX-7E-wu9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="n4O-Np-xuA">
+                            <connections>
+                                <segue destination="iFc-HQ-i42" kind="show" id="Tve-8Q-NnR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="aWr-Db-5Fu" id="fu0-5g-QZa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="260" y="132.68365817091455"/>
+        </scene>
+        <!--Cavy View Controller-->
+        <scene sceneID="hOR-FO-EYE">
+            <objects>
+                <viewController id="iFc-HQ-i42" customClass="CavyViewController" customModule="Cavy_Catcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ma4-C1-Inc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jsdevs.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="WOk-7g-Vwl">
+                                <rect key="frame" x="47.5" y="84" width="280" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="Cyl-lr-jbb"/>
+                                    <constraint firstAttribute="width" constant="280" id="XNV-HB-lxW"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name your pig" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Fa-Ed-neN">
+                                <rect key="frame" x="47.5" y="384" width="280" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YQK-Ju-9eJ">
+                                <rect key="frame" x="172.5" y="434" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5iZ-pX-ZcM">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFD-9b-XHE">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="Add"/>
+                                                <connections>
+                                                    <action selector="addTapped:" destination="iFc-HQ-i42" eventType="touchUpInside" id="Khl-Gu-l0s"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WOk-7g-Vwl" firstAttribute="centerX" secondItem="ma4-C1-Inc" secondAttribute="centerX" id="TWT-Zq-s8e"/>
+                            <constraint firstItem="WOk-7g-Vwl" firstAttribute="top" secondItem="mJY-2d-RsI" secondAttribute="top" constant="20" id="U3n-9v-YpE"/>
+                            <constraint firstItem="3Fa-Ed-neN" firstAttribute="centerX" secondItem="ma4-C1-Inc" secondAttribute="centerX" id="Wz0-oo-vrC"/>
+                            <constraint firstItem="3Fa-Ed-neN" firstAttribute="width" secondItem="WOk-7g-Vwl" secondAttribute="width" id="bUb-v7-JAl"/>
+                            <constraint firstItem="3Fa-Ed-neN" firstAttribute="top" secondItem="WOk-7g-Vwl" secondAttribute="bottom" constant="20" id="hbu-69-ORO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mJY-2d-RsI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wiP-GY-nTi">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="xum-jT-ToU">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="iFc-HQ-i42" id="LB0-lq-VXB"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="tEf-YM-KLV">
+                                <connections>
+                                    <action selector="photosTapped:" destination="iFc-HQ-i42" id="V9R-hX-ja1"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cavyImageView" destination="WOk-7g-Vwl" id="DoW-4A-OVQ"/>
+                        <outlet property="titleTextField" destination="3Fa-Ed-neN" id="zi0-fp-2w8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yQ-kX-mcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982" y="133"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hyk-th-M6p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lAJ-dP-e9J" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M04-hY-hH4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EzY-1S-aLa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UHH-eh-mgr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-466" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="jsdevs.jpeg" width="480" height="480"/>
+    </resources>
 </document>
