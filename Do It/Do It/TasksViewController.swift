@@ -14,6 +14,8 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     var tasks : [Task] = []
     
+    var selectedIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,6 +34,8 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = UITableViewCell()
         let task = tasks[indexPath.row]
         
+        selectedIndex = indexPath.row
+        
         if task.important {
             cell.textLabel?.text = "❗️\(task.name)"
         } else {
@@ -43,7 +47,7 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let task = tasks[indexPath.row]
-        performSegue(withIdentifier: "selectTaskSegue", sender: Any?)
+        performSegue(withIdentifier: "selectTaskSegue", sender: task)
     }
 
     func makeTasks() -> [Task] {
@@ -75,7 +79,9 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         
         if segue.identifier == "selectTaskSegue" {
-            
+            let nextVC = segue.destination as! CompleteTaskViewController
+            nextVC.task = sender as! Task
+            nextVC.previousVC = self
         }
     }
     

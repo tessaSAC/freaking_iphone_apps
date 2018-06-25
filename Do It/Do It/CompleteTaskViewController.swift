@@ -1,5 +1,5 @@
 //
-//  CompleteTaskViewControllerViewController.swift
+//  CompleteTaskViewController.swift
 //  Do It
 //
 //  Created by tessa on 6/18/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CompleteTaskViewControllerViewController: UIViewController {
+class CompleteTaskViewControllerr: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
