@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		22D11CF1A32CCB8EFD7DF0AC /* Pods_Snapchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D97A8EA43AFB8815C23C775 /* Pods_Snapchat.framework */; };
 		8C8B7FEC20E1C8740030F2B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7FEB20E1C8740030F2B9 /* AppDelegate.swift */; };
-		8C8B7FEE20E1C8740030F2B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7FED20E1C8740030F2B9 /* ViewController.swift */; };
+		8C8B7FEE20E1C8740030F2B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8B7FED20E1C8740030F2B9 /* LoginViewController.swift */; };
 		8C8B7FF120E1C8740030F2B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B7FEF20E1C8740030F2B9 /* Main.storyboard */; };
 		8C8B7FF320E1C8740030F2B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B7FF220E1C8740030F2B9 /* Assets.xcassets */; };
 		8C8B7FF620E1C8740030F2B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8B7FF420E1C8740030F2B9 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		1A104F3E80E976BFC6485450 /* Pods-Snapchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snapchat/Pods-Snapchat.debug.xcconfig"; sourceTree = "<group>"; };
 		8C8B7FE820E1C8740030F2B9 /* Snapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8B7FEB20E1C8740030F2B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C8B7FED20E1C8740030F2B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C8B7FED20E1C8740030F2B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8C8B7FF020E1C8740030F2B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C8B7FF220E1C8740030F2B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C8B7FF520E1C8740030F2B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				8C8B7FEB20E1C8740030F2B9 /* AppDelegate.swift */,
-				8C8B7FED20E1C8740030F2B9 /* ViewController.swift */,
+				8C8B7FED20E1C8740030F2B9 /* LoginViewController.swift */,
 				8C8B7FEF20E1C8740030F2B9 /* Main.storyboard */,
 				8C8B7FF220E1C8740030F2B9 /* Assets.xcassets */,
 				8C8B7FF420E1C8740030F2B9 /* LaunchScreen.storyboard */,
@@ -187,12 +187,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Snapchat/Pods-Snapchat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,7 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C8B7FEE20E1C8740030F2B9 /* ViewController.swift in Sources */,
+				8C8B7FEE20E1C8740030F2B9 /* LoginViewController.swift in Sources */,
 				8C8B7FEC20E1C8740030F2B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
