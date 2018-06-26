@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" id="AQX-7E-wu9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="n4O-Np-xuA">
                             <connections>
-                                <segue destination="iFc-HQ-i42" kind="show" id="Tve-8Q-NnR"/>
+                                <segue destination="iFc-HQ-i42" kind="show" identifier="pigue" id="Tve-8Q-NnR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -70,31 +70,38 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YQK-Ju-9eJ">
-                                <rect key="frame" x="172.5" y="434" width="30" height="30"/>
+                                <rect key="frame" x="172.5" y="434" width="280" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5iZ-pX-ZcM">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFD-9b-XHE">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                <state key="normal" title="Add"/>
-                                                <connections>
-                                                    <action selector="addTapped:" destination="iFc-HQ-i42" eventType="touchUpInside" id="Khl-Gu-l0s"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFD-9b-XHE">
+                                <rect key="frame" x="47.5" y="434" width="280" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="iFc-HQ-i42" eventType="touchUpInside" id="Khl-Gu-l0s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oju-0N-tah">
+                                <rect key="frame" x="47" y="484" width="280" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="iFc-HQ-i42" eventType="touchUpInside" id="eMu-Mc-8kE"/>
+                                    <action selector="deleteTapped:" destination="iFc-HQ-i42" eventType="touchUpInside" id="nK4-vH-Je8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oju-0N-tah" firstAttribute="top" secondItem="eFD-9b-XHE" secondAttribute="bottom" constant="20" id="H0y-Fa-fem"/>
+                            <constraint firstItem="oju-0N-tah" firstAttribute="width" secondItem="WOk-7g-Vwl" secondAttribute="width" id="Kat-23-Sjv"/>
+                            <constraint firstItem="eFD-9b-XHE" firstAttribute="centerX" secondItem="ma4-C1-Inc" secondAttribute="centerX" id="QCp-6R-2ly"/>
                             <constraint firstItem="WOk-7g-Vwl" firstAttribute="centerX" secondItem="ma4-C1-Inc" secondAttribute="centerX" id="TWT-Zq-s8e"/>
+                            <constraint firstItem="oju-0N-tah" firstAttribute="centerX" secondItem="ma4-C1-Inc" secondAttribute="centerX" id="Tj8-e5-ubt"/>
                             <constraint firstItem="WOk-7g-Vwl" firstAttribute="top" secondItem="mJY-2d-RsI" secondAttribute="top" constant="20" id="U3n-9v-YpE"/>
                             <constraint firstItem="3Fa-Ed-neN" firstAttribute="centerX" secondItem="ma4-C1-Inc" secondAttribute="centerX" id="Wz0-oo-vrC"/>
+                            <constraint firstItem="eFD-9b-XHE" firstAttribute="top" secondItem="3Fa-Ed-neN" secondAttribute="bottom" constant="20" id="XBs-nN-JgI"/>
                             <constraint firstItem="3Fa-Ed-neN" firstAttribute="width" secondItem="WOk-7g-Vwl" secondAttribute="width" id="bUb-v7-JAl"/>
                             <constraint firstItem="3Fa-Ed-neN" firstAttribute="top" secondItem="WOk-7g-Vwl" secondAttribute="bottom" constant="20" id="hbu-69-ORO"/>
+                            <constraint firstItem="eFD-9b-XHE" firstAttribute="width" secondItem="WOk-7g-Vwl" secondAttribute="width" id="k4d-At-ZnR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mJY-2d-RsI"/>
                     </view>
@@ -113,7 +120,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateButton" destination="eFD-9b-XHE" id="pdx-cL-w6G"/>
                         <outlet property="cavyImageView" destination="WOk-7g-Vwl" id="DoW-4A-OVQ"/>
+                        <outlet property="deleteButton" destination="oju-0N-tah" id="UEr-gK-8hn"/>
                         <outlet property="titleTextField" destination="3Fa-Ed-neN" id="zi0-fp-2w8"/>
                     </connections>
                 </viewController>

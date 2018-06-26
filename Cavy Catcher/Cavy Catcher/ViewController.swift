@@ -38,14 +38,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        
         let pig = piggies[indexPath.row]
         
         cell.textLabel?.text = pig.name
         // Need to convert back from "NSData"
-        cell.imageView?.image = UIImage(data: pig.image as! Data)  // needs to be NSData
+        cell.imageView?.image = UIImage(data: pig.image!)  // needs to be NSData
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pig = piggies[indexPath.row]
+        
+        performSegue(withIdentifier: "pigue", sender: pig)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! CavyViewController
+        nextVC.pig = sender as? Pig
     }
 }
 

@@ -10,17 +10,29 @@ import UIKit
 
 class CavyViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var addUpdateButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var cavyImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     
     var imagePicker = UIImagePickerController()
-    
+    // If `pig == nil` it's a new Pig
+    var pig : Pig? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // imagePicker needs to know what to do with selected images
         imagePicker.delegate = self
+        
+        if pig != nil {
+            cavyImageView.image = UIImage(data: pig!.image!)
+            titleTextField.text = pig?.name
+            
+            addUpdateButton.setTitle("Update", for: .normal)
+        } else {
+            deleteButton.isHidden = true
+        }
     }
 
     @IBAction func photosTapped(_ sender: Any) {
@@ -48,15 +60,28 @@ class CavyViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func addTapped(_ sender: AnyObject) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let pig = Pig(context: context)
-        pig.name = titleTextField.text
-        // Because it's NSData(??????) need to convert the image
-        pig.image = UIImagePNGRepresentation(cavyImageView.image!)
+        if pig != nil {
+            // Set these properties to whatever is in the fields
+            pig!.name = titleTextField.text
+            pig!.image = UIImagePNGRepresentation(cavyImageView.image!)
+        } else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let pig = Pig(context: context)
+            pig.name = titleTextField.text
+            // Because it's NSData(??????) need to convert the image
+            pig.image = UIImagePNGRepresentation(cavyImageView.image!)
+        }
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        
+        navigationController!.popViewController(animated: true)
+    }
+    @IBAction func deleteTapped(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        // Delete pig which we know exists because otherwise button would not be available
+        context.delete(pig!)
+        // Save context then pop top view
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
     }
 }
